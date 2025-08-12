@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My OnClicka Ad Page</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #121212;
+      color: #fff;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      color: #ff9800;
+    }
+    button {
+      background: #ff9800;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #e68a00;
+    }
+    #ad-box {
+      background: #1e1e1e;
+      min-height: 150px;
+      margin-top: 20px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome</h1>
+  <p>বাটনে ক্লিক করলে অ্যাড লোড হবে।</p>
+
+  <button id="loadAdBtn">অ্যাড লোড করুন</button>
+
+  <div id="ad-box">এখানে অ্যাড আসবে...</div>
+
+  <script>
+    document.getElementById('loadAdBtn').addEventListener('click', function() {
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = "https://js.onclckmn.com/static/onclicka.js";
+      script.setAttribute('data-admpid', '359653'); // আপনার admPID
+      document.body.appendChild(script);
+
+      document.getElementById('ad-box').innerHTML = "অ্যাড লোড হচ্ছে...";
+    });
+  </script>
+
+</body>
+</html>
